@@ -17,6 +17,20 @@
 
 # Hint: use the random library's choice or randint method to choose a random value between 1 and 6.
 
+def throw_dice():
+    import random
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+    return die1, die2
+def roll_result(die1, die2):
+    sum_dice = die1 + die2
+    if sum_dice <= 6:
+        return f"The sum of your dice is {sum_dice}. Unfortunate"
+    elif 6 < sum_dice < 10:
+        return f"The sum of your dice is {sum_dice}. You have a good chance"
+    else:
+        return f"The sum of your dice is {sum_dice}. It looks like a winning roll"
+
 
 
 # Interactions Between Functions Practice #2
@@ -26,7 +40,17 @@
 
 # Create a function called average() that can receive as an argument the list returned by the previous function, and that calculates the average of its values. It should return the result (a float), without printing it.
 
-# \
+def reduce_list(numbers):
+    unique_numbers = list(set(numbers))
+    unique_numbers.remove(max(unique_numbers))
+    return unique_numbers 
+def average(numbers):
+    if len(numbers) == 0:
+        return 0.0
+    return sum(numbers) / len(numbers)
+
+
+
 # Interactions Between Functions Practice #3
 # You must create a list with values and call it secret_codes.
 
@@ -39,6 +63,26 @@
 # If the coin comes up "Heads", it should print to the screen: "List was saved" and return the list intact.
 
 # Hint: Use the random library's choice method to choose an element at random from a sequence.
+
+
+secret_codes = [42, 7, 13, 99, 23]
+def toss_coin():
+    import random
+    return random.choice(["Heads", "Tails"])
+def luck(coin_result, codes):
+    if coin_result == "Tails":
+        print("List will self-destruct")
+        return []
+    else:
+        print("List was saved")
+        return codes
+
+
+
+
+
+
+
 
 
 
