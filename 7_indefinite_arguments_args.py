@@ -1,5 +1,30 @@
+def tea_order(customer_name, tea_type,*args, **kwargs):
+    print(customer_name, "ordered a", tea_type, "tea.")
+
+for arg in args:
+    print(" - Add", arg)
+
+
+for key, value in kwargs.items():
+    print(" - Add", key, ":", value)
+
+
+
+tea_order("Alice", "chamomile")
+tea_order("Bob", "Black", milk ="Oat")
+tea_order("Tony", "Black",  "oat", sweetner ="honey")
+
+
+
+
+
+
+
+
+
 # Indefinite Arguments (*args) Practice #1
 # Create a function called sum_squares that takes any number of numeric arguments, and returns the sum of their values squared.
+
 
 # For example for the arguments sum_squares(1,2,3) it should return 14 (1+4+9).
 
